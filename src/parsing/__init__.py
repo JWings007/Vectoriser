@@ -1,0 +1,1 @@
+"""SVG parsing utilities."""
