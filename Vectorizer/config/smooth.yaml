@@ -1,0 +1,24 @@
+preprocessing:
+  enabled: true
+  denoise: false
+  denoise_strength: 5
+  sharpen: false
+  quantize_colors: false
+
+tracing:
+  colormode: "color"
+  hierarchical: "stacked"
+  mode: "spline"
+  filter_speckle: 2
+  color_precision: 12
+  layer_difference: 16
+  corner_threshold: 45
+  length_threshold: 5.0
+  splice_threshold: 45
+  path_precision: 12
+
+optimization:
+  simplify_paths: false
+  simplify_tolerance: 0.1
+  coordinate_precision: 4
+  merge_adjacent: false

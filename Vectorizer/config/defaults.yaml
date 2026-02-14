@@ -1,0 +1,109 @@
+tracing:
+  colormode: "color"
+  hierarchical: "stacked"
+  mode: "spline"
+  filter_speckle: 4
+  color_precision: 6
+  layer_difference: 16
+  corner_threshold: 60
+  length_threshold: 10.0
+  splice_threshold: 45
+  path_precision: 8
+
+preprocessing:
+  enabled: true
+  denoise: true
+  denoise_strength: 10
+  sharpen: false
+  quantize_colors: false
+  quantize_n_colors: 16
+
+analysis:
+  min_path_area: 2.0
+  color_space: "cielab"
+
+clustering:
+  method: "dbscan"
+  eps: 0.5
+  min_samples: 1
+  feature_weights:
+    position: 1.0
+    color: 2.0
+    area: 0.5
+    complexity: 0.3
+    aspect_ratio: 0.3
+
+grouping:
+  merge_enabled: true
+  proximity_threshold: 50.0
+  color_tolerance: 25.0
+  min_group_size: 1
+
+hierarchy:
+  enabled: true
+  containment_method: "geometric"
+  area_ratio_threshold: 1.1
+
+optimization:
+  coordinate_precision: 2
+  remove_degenerate: true
+  merge_adjacent: true
+  simplify_paths: true
+  simplify_tolerance: 0.5
+
+output:
+  indent: true
+  indent_spaces: 2
+  add_metadata: true
+  add_group_ids: true
+  promote_common_attributes: true
+
+presets:
+  logo:
+    tracing:
+      color_precision: 4
+      filter_speckle: 8
+    clustering:
+      eps: 0.4
+      feature_weights:
+        color: 3.0
+    grouping:
+      color_tolerance: 15.0
+
+  illustration:
+    tracing:
+      color_precision: 6
+    clustering:
+      eps: 0.5
+    grouping:
+      color_tolerance: 30.0
+
+  photograph:
+    preprocessing:
+      quantize_colors: true
+      quantize_n_colors: 24
+    tracing:
+      color_precision: 8
+    clustering:
+      eps: 0.6
+    grouping:
+      color_tolerance: 40.0
+
+  lineart:
+    preprocessing:
+      denoise: true
+      denoise_strength: 7
+      quantize_colors: true
+      quantize_n_colors: 8
+    tracing:
+      mode: "spline"
+      color_precision: 8
+      filter_speckle: 8
+      corner_threshold: 25
+      length_threshold: 15.0
+      splice_threshold: 25
+      path_precision: 12
+    optimization:
+      simplify_paths: false
+      merge_adjacent: false
+      coordinate_precision: 4
