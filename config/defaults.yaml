@@ -17,6 +17,11 @@ preprocessing:
   sharpen: false
   quantize_colors: false
   quantize_n_colors: 16
+  quantize_mode: "fixed"
+  quantize_n_colors_min: 8
+  quantize_n_colors_max: 64
+  quantize_color_space: "lab"
+  quantize_sample_size: 50000
 
 analysis:
   min_path_area: 2.0

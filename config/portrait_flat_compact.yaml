@@ -1,0 +1,30 @@
+preprocessing:
+  enabled: true
+  denoise: false
+  quantize_colors: true
+  quantize_mode: "fixed"
+  quantize_n_colors_min: 30
+  quantize_n_colors_max: 60
+  quantize_n_colors: 50
+  quantize_color_space: "lab"
+
+analysis:
+  min_path_area: 4.0
+
+tracing:
+  colormode: "color"
+  hierarchical: "stacked"
+  mode: "spline"
+  filter_speckle: 6
+  color_precision: 12
+  layer_difference: 12
+  corner_threshold: 35
+  length_threshold: 4.0
+  splice_threshold: 35
+  path_precision: 6
+
+optimization:
+  simplify_paths: true
+  simplify_tolerance: 0.6
+  coordinate_precision: 2
+  merge_adjacent: true

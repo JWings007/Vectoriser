@@ -20,6 +20,17 @@ class PathSimplifier:
     def simplify_all(self, paths: List[PathInfo]) -> List[PathInfo]:
         """Apply simplification to all paths."""
         if not self.simplify_paths:
+            rounded_count = 0
+            for path_info in paths:
+                original_d = path_info.d
+                new_d = self._round_path_d(original_d, self.coordinate_precision)
+                if new_d != original_d:
+                    path_info.d = new_d
+                    rounded_count += 1
+            logger.info(
+                f"Rounded {rounded_count}/{len(paths)} paths "
+                f"to {self.coordinate_precision} decimals"
+            )
             return paths
 
         simplified_count = 0
